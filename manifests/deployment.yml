@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: procomertidockerping 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: procomertidockerping
+  template:
+    metadata:
+      labels:
+        app: procomertidockerping 
+    spec:
+      containers:
+        - name: procomertidockerping 
+          image: kubernettes.azurecr.io/procomertidockerping
+          ports:
+          - containerPort: 8090
